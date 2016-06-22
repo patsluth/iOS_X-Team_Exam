@@ -1,0 +1,29 @@
+Pat Sluth
+iOS Test Notes
+
+any instructions that I'll need to build and run the app (eg. if there's 
+a particular VM I should use)
+
+	- I used Xcode 7.3.1 to build and run. Tested on iPhone 6s (device and simulator).
+
+notes on technical decisions you made, and the pros / cons of that approach
+
+	- I originally loaded each product individually, but switched to loading 
+		in 10 item blocks to reduce API requests.
+	- iOS doesn't allow much control over URL caching, so to cache API requests
+		for 1 hour I append the date to the URL request rounded to the nearest hour.
+	- I decided not to use the 'onlyInStock', API option, instead saving in stock items
+		in a separate data structure. This way there is no need for another API request
+		on the switch toggle.
+	- I used a UICollectionView instead of a UITableView for it's support for horizontal
+		and vertical cells.
+
+recommendations that you would want to see followed up if this were the 
+beginning of a long-term project. What kinds of things do you look for 
+in the code, technology choices, team practices etc. that can help to 
+make a project successful?
+
+	- I like to be able to directly work with the backend developer to customize the 
+		API if needed, to optimize the app.
+	- I like working on teams who follow the same set of coding standard rules.
+	- I like working with developers who comment their code well.
